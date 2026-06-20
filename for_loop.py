@@ -1,3 +1,10 @@
+"""
+FOR LOOP
+
+Definition:
+For loop is used when the number of iterations are known in advance.
+"""
+
 # String
 name="Savitha"
 for letter in name:
