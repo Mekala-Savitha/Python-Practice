@@ -1,3 +1,12 @@
+"""
+VARIABLES IN PYTHON 
+
+Definition:
+Variables are the names assigned to a memory location to store values.
+To print the variable-values in the output,we have to use print().
+To print the dataype of the variable,we have to use type().
+"""
+
 # Example 1
 name="Savitha"
 print(name)
