@@ -1,3 +1,10 @@
+"""
+NESTED LOOP
+
+Definition:
+A loop inside another loop.
+"""
+
 # List
 a=[7,2,5]
 b=[9,6,1]
