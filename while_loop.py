@@ -1,3 +1,16 @@
+"""
+LOOPS IN PYTHON 
+
+Definition:
+A loop is used to execute a block of code multiple times or until all items in a sequence are processed.
+This reduces code duplication and makes program efficient.
+
+WHILE LOOP
+Definition:
+A while loop executes as long as the given condition is True.
+While loop is used for unknown number of iterations.
+"""
+
 # Print 1-50
 x=0
 while x<51:
