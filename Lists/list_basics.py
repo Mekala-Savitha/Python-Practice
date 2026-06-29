@@ -1,7 +1,6 @@
 # List Definition
-# A list is a built-in Python data structure used to store multiple
-# items in a single variable. Lists are ordered, mutable (changeable),
-# and allow duplicate values.
+# A list is a built-in Python data structure used to store multiple items in a single variable. 
+# Lists are ordered, mutable (changeable),and allow duplicate values.
 
 # Syntax
 # list_name = [item1, item2, item3]
