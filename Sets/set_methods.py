@@ -85,3 +85,84 @@ print(max(numbers))
 # Syntax: min(set_name)
 numbers = {15, 30, 45, 10}
 print(min(numbers))
+
+
+11. union()
+# Returns a new set containing all unique elements.
+# Syntax: set1.union(set2)
+A = {1, 2, 3}
+B = {3, 4, 5}
+print(A.union(B))
+
+
+12. intersection()
+# Returns common elements.
+# Syntax: set1.intersection(set2)
+A = {1, 2, 3}
+B = {2, 3, 4}
+print(A.intersection(B))
+
+
+13. difference()
+# Returns elements present only in first set.
+# Syntax: set1.difference(set2)
+print(A.difference(B))
+
+
+14. symmetric_difference()
+# Returns elements not common to both sets.
+# Syntax: set1.symmetric_difference(set2)
+A = {1, 2, 3}
+B = {3, 4, 5}
+print(A.symmetric_difference(B))
+
+
+15. intersection_update()
+# Updates the set with common elements.
+# Syntax: set1.intersection_update(set2)
+A = {1, 2, 3}
+B = {2, 3, 4}
+A.intersection_update(B)
+print(A)
+
+
+16. difference_update()
+# Removes common elements.
+# Syntax: set1.difference_update(set2)
+A = {1, 2, 3}
+B = {2, 3, 4}
+A.difference_update(B)
+print(A)
+
+
+17. symmetric_difference_update()
+# Updates with non-common elements.
+# Syntax: set1.symmetric_difference_update(set2)
+A = {1, 2, 3}
+B = {3, 4, 5}
+A.symmetric_difference_update(B)
+print(A)
+
+
+18. issubset()
+# Checks whether one set is a subset.
+# Syntax: set1.issubset(set2)
+A = {1, 2}
+B = {1, 2, 3, 4}
+print(A.issubset(B))
+
+
+19. issuperset()
+# Checks whether one set is a superset.
+# Syntax: set1.issuperset(set2)
+A = {1, 2, 3, 4}
+B = {1, 2}
+print(A.issuperset(B))
+
+
+20. isdisjoint()
+# Returns True if two sets have no common elements.
+# Syntax: set1.isdisjoint(set2)
+A = {1, 2}
+B = {3, 4}
+print(A.isdisjoint(B))
