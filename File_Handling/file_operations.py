@@ -189,34 +189,31 @@ os.rmdir("empty_folder")
 
 # Example 7:
 # Copy a file.
-
 with open("data.txt", "w") as file:
     file.write("Original file")
-
-# shutil.copy("data.txt", "backup.txt")
+shutil.copy("data.txt", "backup.txt")
+print("File copied successfully ")
 
 
 # Example 8:
 # Move a file.
-
-# shutil.move("backup.txt", "practice_folder/backup.txt")
+shutil.move("backup.txt", "practice_folder/backup.txt")
+print("File moved successfully")
 
 
 # Example 9:
 # Copy an entire directory.
-
-# os.mkdir("source_folder")
-
-# with open("source_folder/file1.txt", "w") as file:
-#     file.write("File 1")
-
-# shutil.copytree("source_folder", "copied_folder")
+os.mkdir("source_folder")
+with open("source_folder/file1.txt", "w") as file:
+    file.write("File 1")
+shutil.copytree("source_folder", "copied_folder")
+print("Folder copied successfully")
 
 
 # Example 10:
 # Delete a directory and all its contents.
-
-# shutil.rmtree("copied_folder")
+shutil.rmtree("copied_folder")
+print("Directory deleted successfully")
 
 
 13. PRACTICE PROGRAMS
