@@ -329,77 +329,205 @@ class ClassName:
 
 ## Example Program
       
-class Number:
-    def __init__(self, value):
-        self.value = value
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
 
+    # __str__() -> print(object)
     def __str__(self):
-        return f"Number: {self.value}"
+        return f"Student(Name={self.name}, Marks={self.marks})"
 
+    # __repr__() -> repr(object)
     def __repr__(self):
-        return f"Number({self.value})"
+        return f"Student('{self.name}', {self.marks})"
 
-    def __add__(self, other):
-        return Number(self.value + other.value)
+    # __len__() -> len(object)
+    def __len__(self):
+        return len(self.name)
 
-    def __sub__(self, other):
-        return Number(self.value - other.value)
-
-    def __mul__(self, other):
-        return Number(self.value * other.value)
-
+    # __eq__() -> object1 == object2
     def __eq__(self, other):
-        return self.value == other.value
+        return self.marks == other.marks
 
+    # __lt__() -> object1 < object2
     def __lt__(self, other):
-        return self.value < other.value
+        return self.marks < other.marks
 
+    # __gt__() -> object1 > object2
     def __gt__(self, other):
-        return self.value > other.value
+        return self.marks > other.marks
+
+    # __add__() -> object1 + object2
+    def __add__(self, other):
+        return self.marks + other.marks
+
+    # __sub__() -> object1 - object2
+    def __sub__(self, other):
+        return self.marks - other.marks
+
+    # __mul__() -> object1 * object2
+    def __mul__(self, other):
+        return self.marks * other.marks
+
+    # __truediv__() -> object1 / object2
+    def __truediv__(self, other):
+        return self.marks / other.marks
+
+    # __mod__() -> object1 % object2
+    def __mod__(self, other):
+        return self.marks % other.marks
 
 
-num1 = Number(10)
-num2 = Number(5)
+class StudentList:
+    def __init__(self, students):
+        self.students = students
 
-print(num1)
-print(repr(num1))
+    # __contains__() -> item in object
+    def __contains__(self, student):
+        return student in self.students
 
-result = num1 + num2
-print("Addition:", result)
+    # __getitem__() -> object[index]
+    def __getitem__(self, index):
+        return self.students[index]
 
-result = num1 - num2
-print("Subtraction:", result)
+    # __setitem__() -> object[index] = value
+    def __setitem__(self, index, value):
+        self.students[index] = value
 
-result = num1 * num2
-print("Multiplication:", result)
+    # __delitem__() -> del object[index]
+    def __delitem__(self, index):
+        del self.students[index]
 
-print("Equal:", num1 == num2)
-print("Less than:", num1 < num2)
-print("Greater than:", num1 > num2)
+    # __iter__() -> for item in object
+    def __iter__(self):
+        return iter(self.students)
+
+    # __call__() -> object()
+    def __call__(self):
+        return f"Total Students: {len(self.students)}"
+
+
+# Creating objects
+student1 = Student("Savitha", 80)
+student2 = Student("Anitha", 70)
+
+# __str__()
+print(student1)
+
+# __repr__()
+print(repr(student1))
+
+# __len__()
+print("Length of name:", len(student1))
+
+# __eq__()
+print("Equal:", student1 == student2)
+
+# __lt__()
+print("Student1 < Student2:", student1 < student2)
+
+# __gt__()
+print("Student1 > Student2:", student1 > student2)
+
+# Arithmetic magic methods
+print("Addition:", student1 + student2)
+print("Subtraction:", student1 - student2)
+print("Multiplication:", student1 * student2)
+print("Division:", student1 / student2)
+print("Modulus:", student1 % student2)
+
+
+# StudentList object
+students = StudentList(["Savitha", "Anitha", "Rahul"])
+
+# __contains__()
+print("Savitha" in students)
+
+# __getitem__()
+print("First student:", students[0])
+
+# __setitem__()
+students[1] = "Priya"
+print("After updating:", students.students)
+
+# __delitem__()
+del students[2]
+print("After deleting:", students.students)
+
+# __iter__()
+print("Students:")
+for student in students:
+    print(student)
+
+# __call__()
+print(students())
+
+
+# __enter__() and __exit__()
+class FileManager:
+    def __enter__(self):
+        print("Entering context")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting context")
+
+with FileManager():
+    print("Inside with block")
 
 
 ### Output
 
-Number: 10
-Number(10)
-Addition: Number: 15
-Subtraction: Number: 5
-Multiplication: Number: 50
+Student(Name=Savitha, Marks=80)
+Student('Savitha', 80)
+Length of name: 7
 Equal: False
-Less than: False
-Greater than: True
+Student1 < Student2: False
+Student1 > Student2: True
+Addition: 150
+Subtraction: 10
+Multiplication: 5600
+Division: 1.1428571428571428
+Modulus: 10
+True
+First student: Savitha
+After updating: ['Savitha', 'Priya', 'Rahul']
+After deleting: ['Savitha', 'Priya']
+Students:
+Savitha
+Priya
+Total Students: 2
+Entering context
+Inside with block
+Exiting context
 
-### What this program demonstrates
 
-* `__init__()` → initializes the object
-* `__str__()` → controls `print()`
-* `__repr__()` → controls `repr()`
-* `__add__()` → controls `+`
-* `__sub__()` → controls `-`
-* `__mul__()` → controls `*`
-* `__eq__()` → controls `==`
-* `__lt__()` → controls `<`
-* `__gt__()` → controls `>`
+### Magic Methods Covered
+
+| Magic Method     | Demonstrated          |
+| ---------------- | --------------------- |
+| `__init__()`     | Object initialization |
+| `__str__()`      | `print()`             |
+| `__repr__()`     | `repr()`              |
+| `__len__()`      | `len()`               |
+| `__eq__()`       | `==`                  |
+| `__lt__()`       | `<`                   |
+| `__gt__()`       | `>`                   |
+| `__add__()`      | `+`                   |
+| `__sub__()`      | `-`                   |
+| `__mul__()`      | `*`                   |
+| `__truediv__()`  | `/`                   |
+| `__mod__()`      | `%`                   |
+| `__contains__()` | `in`                  |
+| `__getitem__()`  | `[]`                  |
+| `__setitem__()`  | `[]= `                |
+| `__delitem__()`  | `del`                 |
+| `__iter__()`     | `for` loop            |
+| `__call__()`     | `object()`            |
+| `__enter__()`    | `with`                |
+| `__exit__()`     | `with`                |
+
       
 
 # Key Points
